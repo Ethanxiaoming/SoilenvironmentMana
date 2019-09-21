@@ -224,7 +224,7 @@ $(function() {
 	
 	$('#formproduct').submit(function() {
 		var year= document.getElementById("inityear").value;
-		var region= document.getElementById("initregion").value;
+		var region = document.getElementById("initregionall").value;
 		var html = '<h3>'+year+'年'+region+'地区农产品重金属含量统计</h3>';
 		$("#piehead").html(html);
 		$.ajax({

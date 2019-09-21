@@ -69,11 +69,11 @@ $(function() {
 		var html = '';
 		var html_all = '';
 		if (regionarray != null) {
+			html_all += '<option value="天津市">天津市</option>';
 			for (i in regionarray) {
 				html += '<option value="' + regionarray[i] + '">' + regionarray[i] + '</option>';
 				html_all += '<option value="' + regionarray[i] + '">' + regionarray[i] + '</option>';
 			}
-			html_all += '<option value="天津市">天津市</option>';
 			$("#initregion").html(html);
 			$("#initregionall").html(html_all);
 		} else {
