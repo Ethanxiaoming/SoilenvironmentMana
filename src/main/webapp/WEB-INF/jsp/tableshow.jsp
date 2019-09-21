@@ -96,6 +96,7 @@ table th
 						    <table id="table" style="text-transform: lowercase;">
 							<thead id="tableHead">
 							  	<tr>
+							  		<th>序号</th>
 									<th>地区</th>
 									<th>乡镇</th>
 									<th>年份</th>
@@ -125,12 +126,12 @@ table th
 			var kind = document.getElementById("detailKind").value;
 			var html = '<tr>';
 			if(kind=="region"){
-				html+='<th>地区</th><th>乡镇</th><th>年份</th><th>唯一编号</th>';
+				html+='<th>序号</th><th>地区</th><th>乡镇</th><th>年份</th><th>唯一编号</th>';
 				html+='<th>土壤镉(Cd)</th><th>土壤汞(Hg)</th><th>土壤砷(As)</th><th>土壤铜(Cu)</th>';
 				html+='<th>土壤铅(Pb)</th><th>土壤铬(Cr)</th><th>土壤锌(Zn)</th><th>土壤镍(Ni)</th>';
 				html+='<th>PH</th>' 
 			}else{
-				html+='<th>地区</th><th>乡镇</th><th>年份</th><th>样品编号</th><th>农产品</th>';
+				html+='<th>序号</th><th>地区</th><th>乡镇</th><th>年份</th><th>样品编号</th><th>农产品</th>';
 				html+='<th>农产品镉(Cd)</th><th>农产品汞(Hg)</th><th>农产品砷(As)</th><th>农产品铜(Cu)</th>'
 				html+='<th>农产品铅(Pb)</th><th>农产品铬(Cr)</th><th>农产品锌(Zn)</th><th>农产品镍(Ni)</th>'
 			}
