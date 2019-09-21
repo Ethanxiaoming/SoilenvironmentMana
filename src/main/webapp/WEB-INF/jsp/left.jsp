@@ -31,7 +31,7 @@
 				<li><a class="subnav-text"
 					href="${APP_PATH}/productelem/enterproduct">农作物金属含量统计</a></li>
 			</ul></li>
-		<li class="has-subnav"><a href="${APP_PATH}/input.jsp"> <i
+		<li class="has-subnav"><a href="${APP_PATH}/fileupload/enterinput"> <i
 				class="fa fa-file-text-o nav_icon"></i> <span class="nav-text">
 					文件导入</span>
 		</a></li>
