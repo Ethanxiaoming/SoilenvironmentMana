@@ -33,6 +33,7 @@ public class ProductElemserviceImpl implements ProductElemService {
 	public Map<String, Object> findEleStatisOfRegion(int year, String regionName, int eleid) {
 		Map<String, Object> resultmap = new HashMap<String, Object>();
 		Map<String, Object> maxmap, minmap, avgmap;
+		DecimalFormat df = new DecimalFormat("0.000");
 		maxmap = productdao.selectproductElemax(year, regionName, eleid);
 		minmap = productdao.selectproductElemin(year, regionName, eleid);
 		avgmap = productdao.selectproductEleavg(year, regionName, eleid);
@@ -43,12 +44,12 @@ public class ProductElemserviceImpl implements ProductElemService {
 			resultmap.put("nameofmin", 0);
 			resultmap.put("avgcontent", 0);
 		} else {
-			resultmap.put("maxcontent", maxmap.get("maxcontent"));
+			resultmap.put("maxcontent", df.format(Double.parseDouble(maxmap.get("maxcontent").toString())));
 			resultmap.put("nameOfmax", maxmap.get("nameOfmax"));
-			resultmap.put("mincontent", minmap.get("mincontent"));
+			resultmap.put("mincontent", df.format(Double.parseDouble(minmap.get("mincontent").toString())));
 			resultmap.put("nameofmin", minmap.get("nameOfmin"));
-			resultmap.put("avgcontent", avgmap.get("avgcontent"));
-		}
+			resultmap.put("avgcontent", df.format(Double.parseDouble(avgmap.get("avgcontent").toString())));
+			}
 		return resultmap;
 	}
 
