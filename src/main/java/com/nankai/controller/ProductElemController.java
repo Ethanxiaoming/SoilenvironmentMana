@@ -35,6 +35,7 @@ public class ProductElemController {
 		ResultInfoVO vo = new ResultInfoVO();
 		int thisyear = Integer.parseInt(year);
 		List resultmaplist = new ArrayList<Map<String, Object>>();
+		if(regionName.equals("天津市")) regionName = "%";
 		for (int eleid = 1; eleid < 9; eleid++) {
 			Map<String, Object> resultmap = productelementservice.findEleStatisOfRegion(thisyear, regionName, eleid);
 			resultmaplist.add(resultmap);

@@ -68,7 +68,7 @@
 								年份选择：
 								<select id ="inityear" name="yearName"></select>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地区选择：
-								<select id ="initregion" name="regionName"></select>
+								<select id ="initregionall" name="regionName"></select>
 								<input id="trendclick" type="submit" value="筛选数据" style="width: 160px; height: 30px; margin-left: 20px">
 							</form>
 						</div>

@@ -32,28 +32,28 @@
  	<select id="selectproductOfRegion" parameterType="map" resultMap="proOfregionmap">
  		select DISTINCT s.year,s.region_id,s.id,group_concat(distinct p.name) as name
 			from product p join section s on p.id=s.product_id
-			where s.year=#{year} and s.region_id=(select id from region r where name=#{regionName})
+			where s.year=#{year} and s.region_id in (select id from region r where name like #{regionName})
 			group by p.name
  	</select> 
  	
  	
  	<!--查询某年某区域农作物中某元素的最大值  -->
  	<select id="selectproductElemax" parameterType="map" resultType="java.util.Map">
- 		select elecontent as maxcontent,p.name as nameOfmax
+ 		select elecontent+0 as maxcontent,p.name as nameOfmax
 	from product_element pe join product p on pe.product_id=p.id
 													join section s on p.id=s.product_id
 		
-	where s.year=#{year} and pe.element_id=#{eleid} and s.region_id=(select id from region r where name=#{regionName})
+	where s.year=#{year} and pe.element_id=#{eleid} and s.region_id in (select id from region r where name like #{regionName})
 	order by elecontent+0 desc
   	limit 1
  	</select>
  	<!--查询某年某区域农作物中某元素的最小值  -->
  	<select id="selectproductElemin" parameterType="map" resultType="java.util.Map">
- 		select elecontent as mincontent,p.name as nameOfmin
+ 		select elecontent+0 as mincontent,p.name as nameOfmin
 	from product_element pe join product p on pe.product_id=p.id
 													join section s on p.id=s.product_id
 		
-	where s.year=#{year} and pe.element_id=#{eleid} and s.region_id=(select id from region r where name=#{regionName})
+	where s.year=#{year} and pe.element_id=#{eleid} and s.region_id in (select id from region r where name like #{regionName})
 	order by elecontent+0 asc
   	limit 1
  	</select>
@@ -62,7 +62,7 @@
  		select avg(pe.elecontent+0) as avgcontent
 			from product_element pe join product p on pe.product_id=p.id
 									join section s on p.id=s.product_id
-			where s.`year`=#{year} and pe.element_id=#{eleid} and s.region_id=(select id from region r where `name`=#{regionName})
+			where s.`year`=#{year} and pe.element_id=#{eleid} and s.region_id in (select id from region r where `name` like #{regionName})
  	</select>
 	
 	<select id="selectProductInfo" parameterType="map" resultType="BasicInfo">
